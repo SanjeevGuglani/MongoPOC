@@ -1,8 +1,12 @@
 package com.example.accessingdatamongodb;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.Date;
 
 
+@Document(collection = "test_customer")
 public class Customer {
 
 	@Id
@@ -10,6 +14,11 @@ public class Customer {
 
 	public String firstName;
 	public String lastName;
+
+	public boolean isDeleted;
+
+	public Date deletedDate;
+
 
 	public Customer() {}
 
